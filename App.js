@@ -40,8 +40,17 @@ class App extends React.Component {
     this.resetButton = this.resetButton.bind(this);
     this.countdown = this.countdown.bind(this);
     this.toggleStatus = this.toggleStatus.bind(this);
-  }
 
+    console.log('++++++++++++++++++++++++++++++++++++++++++++')  
+    console.log('constructor: currentTime '+this.state.currentTime)
+    console.log('constructor: workTime '+this.state.workTime)
+    console.log('constructor: breakTime '+this.state.breakTime)
+    console.log('constructor: working '+this.state.working)
+    console.log('constructor: timer '+this.state.timer)
+    console.log('constructor: paused '+this.state.paused)
+    console.log('constructor: playing '+this.state.playing)
+    console.log('--------------------------------------------')  
+  }
   componentWillMount(){
 
   }
@@ -52,6 +61,15 @@ class App extends React.Component {
       resetButton: this,
       pauseButton: this,
     })
+
+    console.log('componentDidMount: currentTime '+this.state.currentTime)
+    console.log('componentDidMount: workTime '+this.state.workTime)
+    console.log('componentDidMount: breakTime '+this.state.breakTime)
+    console.log('componentDidMount: working '+this.state.working)
+    console.log('componentDidMount: timer '+this.state.timer)
+    console.log('componentDidMount: paused '+this.state.paused)
+    console.log('componentDidMount: playing '+this.state.playing)
+    console.log('--------------------------------------------')  
 
     this.setWorkTimer
   }
@@ -83,20 +101,36 @@ class App extends React.Component {
         playing: true,
       });
     }
+    console.log('playButton: currentTime '+this.state.currentTime)
+    console.log('playButton: workTime '+this.state.workTime)
+    console.log('playButton: breakTime '+this.state.breakTime)
+    console.log('playButton: working '+this.state.working)
+    console.log('playButton: timer '+this.state.timer)
+    console.log('playButton: paused '+this.state.paused)
+    console.log('playButton: playing '+this.state.playing)
+    console.log('--------------------------------------------')  
   }
 
   pauseButton () {
     if (this.state.paused === false && this.state.playing === true) {
       clearInterval(this.state.timer);
       this.setState({
-        paused: true,
+        paused: false,
         timer: null,
         playing: false
       });
-      console.log('this.state.paused '+this.state.paused);
+  
     } else if (this.state.paused === true && this.state.playing === false) {
       this.playButton();
-    }       
+    }
+    console.log('pauseButton: currentTime '+this.state.currentTime)
+    console.log('pauseButton: workTime '+this.state.workTime)
+    console.log('pauseButton: breakTime '+this.state.breakTime)
+    console.log('pauseButton: working '+this.state.working)
+    console.log('pauseButton: timer '+this.state.timer)
+    console.log('pauseButton: paused '+this.state.paused)
+    console.log('pauseButton: playing '+this.state.playing)
+    console.log('--------------------------------------------')       
   }
 
   resetButton () {
@@ -108,7 +142,14 @@ class App extends React.Component {
       paused: false,
       working: true,
     })
-    console.log('playing is: ' + this.playing)
+    console.log('resetButton: currentTime '+this.state.currentTime)
+    console.log('resetButton: workTime '+this.state.workTime)
+    console.log('resetButton: breakTime '+this.state.breakTime)
+    console.log('resetButton: working '+this.state.working)
+    console.log('resetButton: timer '+this.state.timer)
+    console.log('resetButton: paused '+this.state.paused)
+    console.log('resetButton: playing '+this.state.playing)
+    console.log('--------------------------------------------')  
   }
 
 
@@ -148,6 +189,11 @@ class App extends React.Component {
         currentTime: this.state.workTime,
       })
     }
+    console.log('resetButton: currentTime '+this.state.currentTime)
+    console.log('resetButton: workTime '+this.state.workTime)
+    console.log('resetButton: breakTime '+this.state.breakTime)
+    console.log('resetButton: working '+this.state.working)
+    console.log('--------------------------------------------')  
   }
 
   render() {
