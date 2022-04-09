@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "expo": "^35.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "prop-types": "^15.6.0",
     "react": "16.8.3",
     "react-dom": "16.8.3",
